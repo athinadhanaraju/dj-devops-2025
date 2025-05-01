@@ -1,10 +1,11 @@
 pipeline {
-    agent any
+    agent slave1/any/docker/kubernetes
     stages {
         stage('welcome note') {
             steps {
                 script {
-                    println "welcome to dj pipelinescripting"
+                    subject="jenkinspac"
+                    println "value of my subject is ${subject}"
                 }
             }
         }
