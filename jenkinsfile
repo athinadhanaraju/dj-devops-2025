@@ -6,6 +6,9 @@ pipeline {
                 script {
                     def subject = "jenkinspac"
                     println "value of my subject is ${subject}"
+                    // working with predefined variables
+                    println "My workspace is ${WORKSPACE}"
+                    println "My build number is ${BUILD_NUMBER}"
                 }
             }
         }
