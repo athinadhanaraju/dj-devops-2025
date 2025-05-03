@@ -1,25 +1,17 @@
 pipeline {
     agent any
-    environment {
-        JAVA_HOME = "/usr/bin/java"
-    }
-    parameters {
-  choice choices: ['dev', 'sit', 'pt', 'prod'], name: 'ENV'
-}
     stages {
-        stage('welcome note') {
+        stage ('working with conditions') {
             steps {
                 script {
-                    def subject = "jenkinspac"
-                    println "value of my subject is ${subject}"
-                    // working with predefined variables
-                    println "My workspace is ${WORKSPACE}"
-                    println "My build number is ${BUILD_NUMBER}"
-                    // working with environment variables
-                    println "My Java home environment value is ${env.JAVA_HOME}"
-                    //working with parameter variables
-                    println "My env value is ${params.ENV}"
-
+                    a = 10
+                    b = 20
+                    if (a > b) { 
+                        println "a value is big ${a}"
+                    }
+                    else {
+                        println "b value is big ${b}"
+                    }
                 }
             }
         }
