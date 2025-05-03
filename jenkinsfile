@@ -5,8 +5,8 @@ pipeline {
             steps {
                 script {
                      File file = new File("/tmp/testdata.txt")
-                     println file.readLines( )
-                     for ( line in file.readLines ) {
+                     println file.readLines()
+                     for ( line in file.readLines () ) {
                         println "my line is ${line}"
                      }  
                     }
